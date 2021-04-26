@@ -3,7 +3,7 @@
  * @file         user.js
  * @description  holds the methods calling from controller
  * @author       Rajas Dongre <itsmerajas2@gmail.com>
-*  @since        15/02/2021  
+*  @since        25/04/2021  
 -----------------------------------------------------------------------------------------------*/
 
 const { error } = require('winston');
@@ -32,6 +32,10 @@ class UserService {
      */
     createUser = (user, callback) => {
         model.createUser(user, callback)
+    }
+
+    loginUser = (userLogin, callback) => {
+        model.findUser(userLogin, callback)
     }
 }
 module.exports = new UserService();

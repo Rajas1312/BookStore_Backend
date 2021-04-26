@@ -1,7 +1,7 @@
 /**
  * @module       controllers
  * @file         user.js
- * @description  FundooController class takes the request and sends response
+ * @description  BookStoreController class takes the request and sends response
  * @author       Rajas Dongre <itsmerajas2@gmail.com>
 *  @since        15/02/2021  
 -----------------------------------------------------------------------------------------------*/
@@ -14,6 +14,7 @@ const bcrypt = require("bcrypt");
 // const helper = require('../../utility/helper')
 // const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const helper = require('../../utility/helper');
 // const ejs = require('ejs')
 // const fs = require('fs')
 // const auth = require('../../auth/nodemailer')
@@ -26,10 +27,10 @@ const ControllerUserValidation = Joi.object().keys({
     password: Joi.string().required(),
     role: Joi.string().required()
 })
-// const ControllerLoginValidation = Joi.object().keys({
-//     emailId: Joi.string().required(),
-//     password: Joi.string().required()
-// })
+const ControllerLoginValidation = Joi.object().keys({
+    emailId: Joi.string().required(),
+    password: Joi.string().required()
+})
 
 class UserController {
 
@@ -45,7 +46,7 @@ class UserController {
                 lastName: req.body.lastName,
                 email: req.body.email,
                 password: req.body.password,
-                role: req.body.role
+                role: req.role
             };
             const validation = ControllerUserValidation.validate(user);
             if (validation.error) {
@@ -57,17 +58,46 @@ class UserController {
                             res.status(500).send(statics.Internal_Server_Error)
                         )
                     } else {
-                        logger.info("Notes added successfully !"),
+                        logger.info("Registered successfully !"),
                             res.status(200).send(statics.Success);
                     }
                 });
             }
         } catch (error) {
-            logger.error("could not create notes ");
+            logger.error("could not register ");
             return res.send(statics.Internal_Server_Error)
         }
     };
 
+    loginUser = (req, res) => {
+        const userLogin = {
+            emailId: req.body.email,
+            password: req.body.password
+        };
+        const validation = ControllerLoginValidation.validate(userLogin);
+        if (validation.error) {
+            res.status(400).send(statics.Bad_Request)
+        } else {
+            service.loginUser(userLogin, (error, result) => {
+                if (!result) {
+                    logger.error("Some error occurred while logging in"),
+                        res.status(500).send(statics.InvalidCredentials)
 
+                } else {
+                    bcrypt.compare(userLogin.password, result.password, (err, data) => {
+                        if (data) {
+                            result.token = helper.generateToken(result)
+                            logger.info("logged in  successfully !"),
+                                res.status(200).send({ token: result.token, satus: statics.SuccessLogin });
+                        }
+                        if (!data) {
+                            res.status(500).send(statics.InvalidCredentials)
+                        }
+                    })
+                }
+
+            });
+        }
+    }
 }
 module.exports = new UserController();

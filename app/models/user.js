@@ -4,7 +4,7 @@
  * @file         user.js
  * @description  UserModel class holds the databse related methods 
  * @author       Rajas Dongre <itsmerajas2@gmail.com>
- * @since        15/2/2021  
+ * @since        25/4/2021  
 -----------------------------------------------------------------------------------------------*/
 const mongoose = require('mongoose');
 const bcrypt = require("bcrypt");
@@ -47,6 +47,15 @@ class UserModel {
             role: user.role
         });
         userSchema.save(callback)
+    };
+
+    /**
+     * @description find the user
+     * @param {*} userLoginData
+     * @param {*} callback
+     */
+    findUser = (userLogin, callback) => {
+        User.findOne({ email: userLogin.emailId }, callback)
     };
 
 }
