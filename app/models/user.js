@@ -58,5 +58,7 @@ class UserModel {
         User.findOne({ email: userLogin.emailId }, callback)
     };
 
+
+
 }
 module.exports = new UserModel();

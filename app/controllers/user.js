@@ -17,7 +17,7 @@ const dotenv = require('dotenv');
 const helper = require('../../utility/helper');
 // const ejs = require('ejs')
 // const fs = require('fs')
-// const auth = require('../../auth/nodemailer')
+const auth = require('../../auth/nodemailer')
 dotenv.config();
 
 const ControllerUserValidation = Joi.object().keys({
@@ -98,6 +98,30 @@ class UserController {
 
             });
         }
+    }
+
+
+    forgotPassword = (req, res) => {
+        const userLogin = {
+            emailId: req.body.email
+        }
+        service.forgotPassword(userLogin, (error, result) => {
+            if (!result) {
+                logger.error("Some error occurred while logging in"),
+                    res.status(500).send(statics.InvalidCredentials)
+
+            } else {
+
+                logger.info("email sent sucessfully")
+                result.token = helper.generateToken(result)
+                res.send({
+                    message: statics.SuccessEmail,
+                    token: result.token
+                })
+                //console.log(result)
+                auth.sendEmail(result)
+            }
+        })
     }
 }
 module.exports = new UserController();
