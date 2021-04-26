@@ -27,3 +27,11 @@
 {"message":"email sent sucessfully","level":"info","timestamp":"2021-04-26T14:42:40.283Z"}
 {"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-26T14:43:21.024Z"}
 {"message":"email sent sucessfully","level":"info","timestamp":"2021-04-26T14:43:25.582Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-26T17:29:51.551Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-26T17:36:26.419Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-26T17:38:49.019Z"}
+{"message":"Registered successfully !","level":"info","timestamp":"2021-04-26T17:41:55.695Z"}
+{"message":"Some error occurred while logging in","level":"error","timestamp":"2021-04-26T17:42:45.197Z"}
+{"message":"logged in  successfully !","level":"info","timestamp":"2021-04-26T17:42:54.822Z"}
+{"message":"Some error occurred while logging in","level":"error","timestamp":"2021-04-26T17:43:19.302Z"}
+{"message":"email sent sucessfully","level":"info","timestamp":"2021-04-26T17:43:25.098Z"}
