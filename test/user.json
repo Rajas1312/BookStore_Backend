@@ -1,0 +1,32 @@
+{
+    "user": {
+        "createUser": {
+            "firstName": "Rajas",
+            "lastName": "Dongre",
+            "email": "itsmerajas2000@gmail.com",
+            "password": "1234",
+            "role": "user"
+        },
+        "createAdmin": {
+            "firstName": "Rajas",
+            "lastName": "Dongre",
+            "email": "itsmerajas2000@gmail.com",
+            "password": "1234",
+            "role": "user"
+        },
+        "loginUser": {
+            "email": "itsmerajas2@gmail.com",
+            "password": "1234"
+        },
+        "loginImproperUser": {
+            "email": "itsmerajas2@gmail.com",
+            "password": "123456"
+        },
+        "forgotPasswordProperData": {
+            "email": "itsmerajas2@gmail.com"
+        },
+        "forgotPasswordImproperEmail": {
+            "email": "abcd@gmail.com"
+        }
+    }
+}

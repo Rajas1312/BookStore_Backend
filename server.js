@@ -5,13 +5,13 @@ const dotenv = require("dotenv");
 const swaggerUi = require("swagger-ui-express");
 const swaggerJson = require("./swagger/swagger.json");
 const dbConnection = require("./config/database.config");
-const cors = require('cors')
+const cors = require("cors");
 dotenv.config();
 const port = process.env.PORT;
 
 // create express app
 const app = express();
-app.use(cors())
+app.use(cors());
 
 // parse requests of content-type - application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));

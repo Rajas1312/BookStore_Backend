@@ -35,3 +35,14 @@
 {"message":"logged in  successfully !","level":"info","timestamp":"2021-04-26T17:42:54.822Z"}
 {"message":"Some error occurred while logging in","level":"error","timestamp":"2021-04-26T17:43:19.302Z"}
 {"message":"email sent sucessfully","level":"info","timestamp":"2021-04-26T17:43:25.098Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T06:39:46.720Z"}
+{"message":"Registered successfully !","level":"info","timestamp":"2021-04-27T06:40:41.273Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T07:23:52.182Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T07:24:38.310Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T07:24:47.371Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T08:21:26.205Z"}
+{"message":"Registered successfully !","level":"info","timestamp":"2021-04-27T08:21:26.426Z"}
+{"message":"Some error occurred while creating notes","level":"error","timestamp":"2021-04-27T08:21:26.531Z"}
+{"message":"logged in  successfully !","level":"info","timestamp":"2021-04-27T08:21:26.639Z"}
+{"message":"email sent sucessfully","level":"info","timestamp":"2021-04-27T08:21:26.743Z"}
+{"message":"Some error occurred while logging in","level":"error","timestamp":"2021-04-27T08:21:26.793Z"}
