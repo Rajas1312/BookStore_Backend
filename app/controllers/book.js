@@ -76,7 +76,7 @@ class NoteController {
             const token = req.headers.authorization.split(" ")[1];
             noteService.findAll((err, data) => {
                 if (err) {
-                    (logger.error("Some error occurred while serching greeting"),
+                    (logger.error("Some error occurred while serching for boooks"),
                         res.status(404).send({
                             sucess: false,
                             message: "could not find any entries"
@@ -86,20 +86,97 @@ class NoteController {
                     logger.info("Greeting found successfully !"),
                         res.status(200).send({
                             sucess: true,
-                            message: "found greetings sucessfully",
+                            message: "found books sucessfully",
                             data: data
                         })
                 }
             })
         } catch (error) {
-            logger.error("greeting not found");
+            logger.error("books not found");
             res.send({
                 success: false,
                 status_code: 500,
-                message: `greeting not found`,
+                message: `Books not found`,
             });
         }
     };
+
+    /**
+    * @description update a note by id
+    * @message update and save a note
+    * @param res is used to send the response
+    */
+    updateNotes = (req, res) => {
+        const noteInfo = {
+            title: req.body.title,
+            description: req.body.description,
+            author: req.body.author,
+            price: req.body.price,
+            image: req.body.image,
+            quantity: req.body.quantity,
+            noteID: req.params.bookId,
+        };
+        const noteData = {
+            title: noteInfo.title,
+            description: noteInfo.description,
+            author: noteInfo.author,
+            price: noteInfo.price,
+            image: noteInfo.image,
+            quantity: noteInfo.quantity
+
+        };
+        const validation = ControllerDataValidation.validate(noteData);
+        return validation.error ?
+            res.status(400).send({
+                success: false,
+                message: "please enter valid details " + validation.error,
+            }) :
+            noteService.updateNotes(noteInfo, (error, data) => {
+                return (
+                    error ?
+                        (logger.error("Error updating books with id : "),
+                            res.send({
+                                status_code: status.Internal_Server_Error,
+                                message: "Error updating books with id : ",
+                            })) :
+                        !data ?
+                            (logger.error("books not found with id : "),
+                                res.send({
+                                    status_code: status.Not_Found,
+                                    message: "books not found with id : "
+                                })) :
+                            logger.info("books updated successfully !"),
+                    res.send({
+                        message: "books updated successfully !",
+                        data: data,
+                    })
+                );
+            });
+    }
+
+    /**
+        * @description Delete a note by id
+        * @message Delete a note
+        * @param res is used to send the response
+        */
+    deleteNotes(req, res) {
+        const noteID = req.params.bookId;
+        noteService.deleteNotes(noteID, (error, data) => {
+            return (
+                error ?
+                    (logger.error("note not found with id " + noteID),
+                        res.send({
+                            status_code: status.Not_Found,
+                            message: "note not found with id " + noteID,
+                        })) :
+                    logger.info("note deleted successfully!"),
+                res.send({
+                    message: "note deleted successfully!",
+                })
+            );
+        });
+    }
+
 
 
 }

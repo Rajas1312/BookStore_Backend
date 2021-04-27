@@ -16,4 +16,8 @@ module.exports = (app) => {
     app.post("/books", helper.verifyToken, notes.createBook);
 
     app.get('/books', helper.verifyToken, notes.findAllBooks);
+
+    app.put('/books/:bookId', helper.verifyToken, notes.updateNotes);
+
+    app.delete('/books/:bookId', helper.verifyToken, notes.deleteNotes);
 }

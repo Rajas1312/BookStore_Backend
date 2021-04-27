@@ -74,3 +74,29 @@
 {"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:20:40.909Z"}
 {"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:21:08.591Z"}
 {"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-27T16:21:11.592Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:31:42.731Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:31:48.066Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:33:13.718Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:33:38.134Z"}
+{"message":"note not found with id : ","level":"error","timestamp":"2021-04-27T16:33:43.375Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:34:42.823Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:34:50.963Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:35:40.689Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:35:53.640Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:37:47.031Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:38:51.467Z"}
+{"message":"note not found with id : ","level":"error","timestamp":"2021-04-27T16:39:00.552Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:41:08.821Z"}
+{"message":"note updated successfully !","level":"info","timestamp":"2021-04-27T16:41:13.080Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:50:15.333Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:50:28.249Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:50:57.273Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:51:17.672Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:51:51.155Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:52:16.360Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:54:52.121Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:54:59.260Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:55:21.009Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:57:03.408Z"}
+{"message":"note deleted successfully!","level":"info","timestamp":"2021-04-27T16:57:05.710Z"}
+{"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-27T16:57:14.238Z"}
