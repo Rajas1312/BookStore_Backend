@@ -76,7 +76,7 @@ class Helper {
                     message: 'Incorrect token or token is expired'
                 });
             }
-            return jwt.verify(token, process.env.SECRET_KEY, (error, decodeData) => {
+            return jwt.verify(token, process.env.JWT_SECRET, (error, decodeData) => {
                 if (error) {
                     logger.error('Incorrect token or token is expired');
                     return res.status(401).send({
@@ -119,7 +119,7 @@ class Helper {
                     message: 'Incorrect token or token is expired'
                 });
             }
-            return jwt.verify(token, process.env.SECRET_KEY, (error, decodeData) => {
+            return jwt.verify(token, process.env.JWT_SECRET, (error, decodeData) => {
                 if (error) {
                     logger.error('Incorrect token or token is expired');
                     return res.status(401).send({
