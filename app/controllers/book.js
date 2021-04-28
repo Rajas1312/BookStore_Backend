@@ -176,5 +176,41 @@ class NoteController {
             );
         });
     }
+
+    addToBag(req, res) {
+        try {
+            const bookId = req.params.bookId;
+            console.log(bookId)
+            noteService.addToBag(bookId, (error, data) => {
+                return (
+                    error ?
+                        (logger.warn("book not found with id " + noteID),
+                            res.send({
+                                status_code: status.Not_Found,
+                                message: "book not found with id " + noteID,
+                            })) :
+                        logger.info("book added successfully!"),
+                    res.send({
+                        status_code: status.Success,
+                        message: "book aadded successfully!",
+                    })
+                );
+            });
+        } catch (error) {
+            return (
+                error.kind === "ObjectId" || error.title === "NotFound" ?
+                    (logger.error("could not found book with id" + noteID),
+                        res.send({
+                            status_code: status.Not_Found,
+                            message: "book not found with id " + noteID,
+                        })) :
+                    logger.error("Could not add book to bag with id " + noteID),
+                res.send({
+                    status_code: status.Internal_Server_Error,
+                    message: "Could not add book with id " + noteID,
+                })
+            );
+        }
+    }
 }
 module.exports = new NoteController()

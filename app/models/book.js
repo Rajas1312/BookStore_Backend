@@ -7,7 +7,8 @@ const BookSchema = mongoose.Schema({
     author: { type: String, required: true },
     price: { type: String, required: true },
     image: { type: String, required: true },
-    quantity: { type: String, required: true }
+    quantity: { type: String, required: true },
+    isAddToBag: { type: Boolean, default: false }
 }, {
     timestamps: true,
 });
@@ -69,6 +70,9 @@ class BookModel {
         Book.findByIdAndRemove(noteID, callback);
     };
 
+    isAddToBag = (bookId, callback) => {
+        Book.findByIdAndUpdate(bookId, { isAddToBag: true }, callback)
+    }
 
 }
 module.exports = new BookModel()

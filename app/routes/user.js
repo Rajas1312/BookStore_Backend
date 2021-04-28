@@ -20,4 +20,6 @@ module.exports = (app) => {
     app.put('/books/:bookId', helper.verifyRole, books.updateBooks);
 
     app.delete('/books/:bookId', helper.verifyRole, books.deleteBooks);
+
+    app.put("/books/addtobag/:bookId", books.addToBag);
 }

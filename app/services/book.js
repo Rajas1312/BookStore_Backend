@@ -33,6 +33,14 @@ class BookService {
         return model.deleteById(noteID, callback);
     };
 
+    /**
+         * @description Delete Note by id and return response to controller
+         * @method deleteById is used to remove Note by ID
+         * @param callback is the callback for controller
+         */
+    addToBag = (bookId, callback) => {
+        return model.isAddToBag(bookId, callback);
+    };
 
 
 }
