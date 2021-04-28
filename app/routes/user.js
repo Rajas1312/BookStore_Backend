@@ -1,5 +1,5 @@
 const user = require('../controllers/user');
-const notes = require("../controllers/book.js");
+const books = require("../controllers/book.js");
 // const labels = require('../controllers/label')
 const helper = require("../../utility/helper");
 module.exports = (app) => {
@@ -13,11 +13,11 @@ module.exports = (app) => {
     app.post("/forgotPassword", user.forgotPassword)
 
     // Create a new note
-    app.post("/books", helper.verifyToken, notes.createBook);
+    app.post("/books", helper.verifyRole, books.createBook);
 
-    app.get('/books', helper.verifyToken, notes.findAllBooks);
+    app.get('/books', helper.verifyToken, books.findAllBooks);
 
-    app.put('/books/:bookId', helper.verifyToken, notes.updateNotes);
+    app.put('/books/:bookId', helper.verifyRole, books.updateBooks);
 
-    app.delete('/books/:bookId', helper.verifyToken, notes.deleteNotes);
+    app.delete('/books/:bookId', helper.verifyRole, books.deleteBooks);
 }

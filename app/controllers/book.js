@@ -106,7 +106,7 @@ class NoteController {
     * @message update and save a note
     * @param res is used to send the response
     */
-    updateNotes = (req, res) => {
+    updateBooks = (req, res) => {
         const noteInfo = {
             title: req.body.title,
             description: req.body.description,
@@ -159,7 +159,7 @@ class NoteController {
         * @message Delete a note
         * @param res is used to send the response
         */
-    deleteNotes(req, res) {
+    deleteBooks(req, res) {
         const noteID = req.params.bookId;
         noteService.deleteNotes(noteID, (error, data) => {
             return (
@@ -169,15 +169,12 @@ class NoteController {
                             status_code: status.Not_Found,
                             message: "note not found with id " + noteID,
                         })) :
-                    logger.info("note deleted successfully!"),
+                    logger.info("book deleted successfully!"),
                 res.send({
-                    message: "note deleted successfully!",
+                    message: "book deleted successfully!",
                 })
             );
         });
     }
-
-
-
 }
 module.exports = new NoteController()

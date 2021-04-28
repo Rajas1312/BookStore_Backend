@@ -11,10 +11,7 @@ const app = express();
 const bcrypt = require("bcrypt");
 require("dotenv").config();
 var jwt = require('jsonwebtoken');
-// const config = require("../config").get();
-// const {
-//     logger
-// } = config;
+const logger = require("../logger/logger")
 
 class Helper {
 

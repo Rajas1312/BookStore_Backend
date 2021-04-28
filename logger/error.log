@@ -11,3 +11,4 @@
 {"message":"greeting not found","level":"error","timestamp":"2021-04-27T16:20:29.845Z"}
 {"message":"note not found with id : ","level":"error","timestamp":"2021-04-27T16:33:43.375Z"}
 {"message":"note not found with id : ","level":"error","timestamp":"2021-04-27T16:39:00.552Z"}
+{"message":"Authorization failed","level":"error","timestamp":"2021-04-28T10:15:45.942Z"}

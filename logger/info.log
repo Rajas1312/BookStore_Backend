@@ -100,3 +100,16 @@
 {"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-27T16:57:03.408Z"}
 {"message":"note deleted successfully!","level":"info","timestamp":"2021-04-27T16:57:05.710Z"}
 {"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-27T16:57:14.238Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-28T10:03:38.509Z"}
+{"message":"Registered successfully !","level":"info","timestamp":"2021-04-28T10:06:27.269Z"}
+{"message":"logged in  successfully !","level":"info","timestamp":"2021-04-28T10:06:49.385Z"}
+{"message":"logged in  successfully !","level":"info","timestamp":"2021-04-28T10:10:18.030Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-28T10:15:41.780Z"}
+{"message":"Authorization failed","level":"error","timestamp":"2021-04-28T10:15:45.942Z"}
+{"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-28T10:15:57.917Z"}
+{"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-28T12:03:53.112Z"}
+{"message":"note deleted successfully!","level":"info","timestamp":"2021-04-28T12:04:05.093Z"}
+{"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-28T12:04:17.487Z"}
+{"message":"books updated successfully !","level":"info","timestamp":"2021-04-28T12:04:33.381Z"}
+{"message":"Greeting found successfully !","level":"info","timestamp":"2021-04-28T12:04:43.327Z"}
+{"message":"server is listining at port 3000","level":"info","timestamp":"2021-04-28T12:05:24.763Z"}
